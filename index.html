@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リネラック - 一括リネームツール 公式操作ガイド [2025年版]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header-bg {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+        }
+        .section-title {
+            border-left: 5px solid #3498db;
+            padding-left: 1rem;
+        }
+        .important-notice {
+            border-left: 5px solid #e74c3c;
+        }
+        .step-card {
+            border-left: 4px solid #2ecc71;
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .tip-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #f39c12;
+        }
+        .image-container {
+            max-width: 100%;
+            margin: 1.5rem 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .feature-icon {
+            background-color: #3498db;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f8fafc;
+        }
+        .code-block {
+            font-family: monospace;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            white-space: pre;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="page-container">
+        <!-- ヘッダーセクション -->
+        <header class="header-bg text-white p-6 rounded-lg shadow-lg mb-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold mb-2">リネラック</h1>
+                    <h2 class="text-xl">一括リネームツール 公式操作ガイド</h2>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm">Version 2025</p>
+                    <p class="text-sm">画像の著作権: 株式会社ミラソラ</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- 目次 -->
+        <div class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">目次</h2>
+            <nav class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="#intro" class="p-3 bg-gray-50 hover:bg-blue-50 rounded transition">1. はじめに - リネラックとは</a>
+                <a href="#install" class="p-3 bg-gray-50 hover:bg-blue-50 rounded transition">2. インストール</a>
+                <a href="#usage" class="p-3 bg-gray-50 hover:bg-blue-50 rounded transition">3. 基本的な使い方</a>
+                <a href="#details" class="p-3 bg-gray-50 hover:bg-blue-50 rounded transition">4. リネーム機能の詳細</a>
+                <a href="#features" class="p-3 bg-gray-50 hover:bg-blue-50 rounded transition">5. 便利な機能</a>
+                <a href="#troubleshooting" class="p-3 bg-gray-50 hover:bg-blue-50 rounded transition">6. トラブルシューティング</a>
+                <a href="#faq" class="p-3 bg-gray-50 hover:bg-blue-50 rounded transition">7. よくある質問と回答</a>
+            </nav>
+        </div>
+
+        <!-- イントロセクション -->
+        <section id="intro" class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">1. はじめに - リネラックとは</h2>
+            
+            <div class="mb-6">
+                <p class="mb-4">
+                    リネラックは、大量の写真やビデオファイルの名前を簡単に整理できるツールです。フォルダごとにファイル名を一括でリネームし、管理しやすい形式に自動整理します。
+                </p>
+                
+                <p class="mb-4">特に以下のような場合に便利です：</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="flex items-start">
+                        <div class="feature-icon">
+                            <i class="fas fa-camera text-white"></i>
+                        </div>
+                        <div>
+                            <p>デジカメやスマートフォンで撮影した写真を整理したい</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt text-white"></i>
+                        </div>
+                        <div>
+                            <p>撮影日や撮影場所ごとにファイル名を統一したい</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt text-white"></i>
+                        </div>
+                        <div>
+                            <p>複数のデバイスからの写真を一括管理したい</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="feature-icon">
+                            <i class="fas fa-building text-white"></i>
+                        </div>
+                        <div>
+                            <p>法人や団体で大量の写真やファイルを管理している</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-red-50 important-notice rounded mb-6">
+                <h3 class="text-xl font-semibold mb-3 text-red-700">1.3. 最初に必ず確認してください（重要！）</h3>
+                <div class="mb-4">
+                    <h4 class="font-medium text-red-700">ツールの置き場所:</h4>
+                    <ul class="list-disc list-inside ml-4 text-gray-800">
+                        <li class="mb-2">リネラック（.exeファイル）は、<strong>OneDriveのようなクラウド同期フォルダや、特別な権限が必要なフォルダ（例: <code>C:\Program Files</code>, <code>C:\Windows</code> など）、またはデスクトップには置かないでください。</strong> 予期せぬエラーや動作不良の原因となります。</li>
+                        <li class="mb-2"><code>C:\</code> ドライブ直下や、ご自身で作成した <code>D:\Tools</code> のような簡単なパスのフォルダに置くようにしてください。</li>
+                        <li class="mb-2">ツールは、実行ファイル（.exe）のみで、その他のファイルやフォルダは実行時に自動生成されます。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- インストールセクション -->
+        <section id="install" class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">2. インストール</h2>
+            
+            <div class="mb-6">
+                <p class="mb-4">リネラックはポータブルアプリケーションとして設計されており、インストール作業は必要ありません。</p>
+                
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-4">
+                    <ol class="list-decimal list-inside ml-4">
+                        <li class="mb-2">配布されたZIPファイルを任意の場所に展開します</li>
+                        <li class="mb-2">展開したフォルダ内の<code>リネラック.exe</code>をダブルクリックするだけで起動できます</li>
+                    </ol>
+                </div>
+                
+                <div class="p-4 bg-blue-50 important-notice rounded mb-6">
+                    <p class="font-medium">※ 初回起動時にWindows Defenderなどのセキュリティ警告が表示される場合がありますが、「実行」を選択してください。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 基本的な使い方セクション -->
+        <section id="usage" class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">3. 基本的な使い方</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">準備</h3>
+                <p class="mb-3">リネーム処理を行う前に、ファイルを以下のような構造で整理してください：</p>
+                
+                <div class="code-block text-sm bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto">
+写真フォルダ（入力フォルダ）
+├── 2024-01-01 初詣（サブフォルダ）
+│   ├── IMG_0001.jpg
+│   ├── IMG_0002.jpg
+│   └── IMG_0003.jpg
+└── 2024-01-03 新年会（サブフォルダ）
+    ├── IMG_0004.jpg
+    ├── IMG_0005.jpg
+    └── IMG_0006.jpg
+                </div>
+                
+                <div class="p-4 bg-red-50 important-notice rounded mb-6">
+                    <h4 class="font-semibold text-red-700 mb-2">重要：</h4>
+                    <ul class="list-disc list-inside ml-4">
+                        <li class="mb-3">入力フォルダの直下にサブフォルダを作成してください
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image.png" alt="サブフォルダの例">
+                            </div>
+                        </li>
+                        <li class="mb-3">リネーム対象のファイルはサブフォルダ内に配置してください
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%201.png" alt="ファイルの配置例">
+                            </div>
+                        </li>
+                        <li class="mb-2">サブフォルダ名がそのままファイル名の一部となります</li>
+                        <li class="mb-2">サブフォルダは1階層のみ対応しています（サブフォルダの中にさらにフォルダを作る構造には対応していません）</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">アプリケーションの起動</h3>
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-4">
+                    <ol class="list-decimal list-inside ml-4">
+                        <li class="mb-2"><code>リネラック.exe</code>をダブルクリックして起動します</li>
+                        <li class="mb-2">アプリケーションが起動すると、「管理」「設定」「プレビュー」の3つの主要セクションが表示されます</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">管理設定の操作</h3>
+                <p class="mb-3">リネラックでは複数の設定を名前を付けて管理できます。これにより、用途に応じた設定を保存して再利用できます。</p>
+                
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-6">
+                    <h4 class="font-medium mb-2">1. 新規設定の作成</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li class="mb-2">「管理」フレームの「登録」ボタンをクリックします
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%202.png" alt="登録ボタン">
+                            </div>
+                        </li>
+                        <li class="mb-2">管理名を入力します（例：「家族写真」「旅行写真」など）
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%203.png" alt="管理名の入力">
+                            </div>
+                        </li>
+                        <li>「OK」ボタンをクリックして登録します</li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">2. 既存設定の選択</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li class="mb-2">「管理」フレームのドロップダウンリストから使用したい設定を選択します
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/EOH0l50N78.png" alt="既存設定の選択">
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">3. 設定の編集</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li class="mb-2">「編集」ボタンをクリックして選択中の管理名を変更できます
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%204.png" alt="設定の編集">
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">4. 設定の削除</h4>
+                    <ul class="list-disc list-inside ml-4">
+                        <li class="mb-2">「削除」ボタンをクリックして選択中の設定を削除できます</li>
+                        <li class="mb-2">削除前に確認ダイアログが表示されます
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%205.png" alt="設定の削除確認">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">設定の入力</h3>
+                <p class="mb-3">「設定」フレームで以下の項目を入力します：</p>
+                
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-6">
+                    <h4 class="font-medium mb-2">1. アルファベット</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li class="mb-2">ファイル名の先頭に付ける英字を入力します</li>
+                        <li class="mb-2">例：「PHOTO」「IMG」など</li>
+                        <li class="mb-2">半角英字のみ使用可能です
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%206.png" alt="アルファベット設定">
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">2. 連番</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li class="mb-2">開始する番号を入力します</li>
+                        <li class="mb-2">例：「1」から開始する場合は「1」を入力</li>
+                        <li class="mb-2">処理完了後、次回は自動的に続きの番号から始まります</li>
+                        <li class="mb-2">数字のみ使用可能です
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%207.png" alt="連番設定">
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">3. 連番の桁数</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li class="mb-2">連番の桁数を指定します</li>
+                        <li class="mb-2">例：「3」を指定すると「001」「002」...となります</li>
+                        <li class="mb-2">1から10までの数字で指定します
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%208.png" alt="連番桁数設定">
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">4. 連番の位置</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li class="mb-2"><strong>「先頭」</strong>：アルファベット＋連番をファイル名の先頭に配置します（例：<code>PHOTO001 初詣.jpg</code>）</li>
+                        <li class="mb-2"><strong>「後方」</strong>：アルファベット＋連番をファイル名の末尾に配置します（例：<code>初詣 PHOTO001.jpg</code>）</li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">5. 入力フォルダ</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li class="mb-2">リネームしたいファイルがあるフォルダを選択します</li>
+                        <li class="mb-2">「選択」ボタンをクリックしてフォルダを選びます</li>
+                        <li class="mb-2">入力フォルダの直下にはサブフォルダが必要です</li>
+                        <li class="mb-2">サブフォルダを使用してリネームされます
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%209.png" alt="入力フォルダ選択">
+                            </div>
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%2010.png" alt="フォルダ選択ダイアログ">
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">6. 出力フォルダ</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li class="mb-2">リネーム後のファイルを保存するフォルダを選択します</li>
+                        <li class="mb-2">「選択」ボタンをクリックしてフォルダを選びます</li>
+                        <li class="mb-2">入力フォルダと同じフォルダは選択できません
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%2011.png" alt="出力フォルダ選択">
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">7. サブフォルダ構成を維持する</h4>
+                    <ul class="list-disc list-inside ml-4">
+                        <li class="mb-2"><strong>チェックあり（デフォルト）</strong>：入力フォルダと同じサブフォルダ構成を維持します</li>
+                        <li class="mb-2"><strong>チェックなし</strong>：すべてのファイルを出力フォルダの直下に配置します（サブフォルダを作成しません）
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%2012.png" alt="サブフォルダ構成の維持設定">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">プレビューの確認</h3>
+                <p class="mb-3">設定入力後、「プレビュー更新」ボタンをクリックすると、右側の「プレビュー」エリアに変更後のファイル名が表示されます。</p>
+                
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-6">
+                    <h4 class="font-medium mb-2">1. プレビュー表示の内容</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li class="mb-2">左列：元のファイル名</li>
+                        <li class="mb-2">右列：変更後のファイル名
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%2013.png" alt="プレビュー表示">
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">2. プレビューの更新</h4>
+                    <ul class="list-disc list-inside ml-4">
+                        <li class="mb-2">設定を変更した後は、「プレビュー更新」ボタンをクリックして最新の状態を確認してください</li>
+                        <li class="mb-2">プレビューを確認することで、意図通りのリネームが行われるか事前に確認できます
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%2014.png" alt="プレビュー更新ボタン">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">リネーム処理の実行</h3>
+                
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-6">
+                    <h4 class="font-medium mb-2">1. 設定の保存</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li class="mb-2">「保存 (Ctrl+S)」ボタンをクリックして設定を保存します</li>
+                        <li class="mb-2">未保存の設定がある場合、処理開始時に保存を促すメッセージが表示されます
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%2015.png" alt="設定の保存ボタン">
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">2. 処理の開始</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li class="mb-2">「処理開始 (F5)」ボタンをクリックします</li>
+                        <li class="mb-2">処理が開始されると、進捗バーに処理状況が表示されます
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%2016.png" alt="処理開始ボタンと進捗バー">
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">3. 処理の完了</h4>
+                    <ul class="list-disc list-inside ml-4">
+                        <li class="mb-2">処理が完了すると結果メッセージが表示されます</li>
+                        <li class="mb-2">処理したファイル数や削除した空フォルダの数が表示されます</li>
+                        <li class="mb-2">エラーが発生した場合は、エラー内容とファイル名が表示されます
+                            <div class="image-container">
+                                <img src="https://ogikosan.github.io/renerakku/image%2017.png" alt="処理完了メッセージ">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- リネーム機能の詳細セクション -->
+        <section id="details" class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">4. リネーム機能の詳細</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">ファイル名の書式</h3>
+                <p class="mb-4">リネラックでは、ファイル名を以下の書式で生成します：</p>
+                
+                <div class="mb-6">
+                    <h4 class="font-medium mb-2">連番位置が「先頭」の場合</h4>
+                    <div class="code-block text-sm bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto">
+&lt;アルファベット&gt;&lt;連番&gt; &lt;サブフォルダ名&gt;.&lt;拡張子&gt;
+                    </div>
+                    
+                    <p class="mb-2">例：</p>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li>設定：アルファベット「PHOTO」、連番「1」、桁数「3」</li>
+                        <li>サブフォルダ名：「2024-01-01 初詣」</li>
+                        <li>結果：<code>PHOTO001 初詣.jpg</code>、<code>PHOTO002 初詣.jpg</code>、...</li>
+                    </ul>
+                </div>
+                
+                <div class="mb-6">
+                    <h4 class="font-medium mb-2">連番位置が「後方」の場合</h4>
+                    <div class="code-block text-sm bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto">
+&lt;サブフォルダ名&gt; &lt;アルファベット&gt;&lt;連番&gt;.&lt;拡張子&gt;
+                    </div>
+                    
+                    <p class="mb-2">例：</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>設定：アルファベット「PHOTO」、連番「1」、桁数「3」</li>
+                        <li>サブフォルダ名：「2024-01-01 初詣」</li>
+                        <li>結果：<code>初詣 PHOTO001.jpg</code>、<code>初詣 PHOTO002.jpg</code>、...</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">サブフォルダ構成</h3>
+                
+                <div class="mb-6">
+                    <h4 class="font-medium mb-2">1. サブフォルダ構成を維持する（デフォルト：チェックあり）</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li>入力フォルダと同じサブフォルダ構成を出力フォルダにも作成します</li>
+                        <li>各サブフォルダのファイルは、対応する出力サブフォルダに保存されます</li>
+                        <li>例：</li>
+                    </ul>
+                    <div class="code-block text-sm bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto">
+出力フォルダ
+├── 2024-01-01 初詣
+│   ├── PHOTO001 初詣.jpg
+│   ├── PHOTO002 初詣.jpg
+│   └── PHOTO003 初詣.jpg
+└── 2024-01-03 新年会
+    ├── PHOTO004 新年会.jpg
+    ├── PHOTO005 新年会.jpg
+    └── PHOTO006 新年会.jpg
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <h4 class="font-medium mb-2">2. サブフォルダ構成を維持しない（チェックなし）</h4>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li>すべてのファイルを出力フォルダの直下に配置します</li>
+                        <li>サブフォルダは作成されません</li>
+                        <li>例：</li>
+                    </ul>
+                    <div class="code-block text-sm bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto">
+出力フォルダ
+├── PHOTO001 初詣.jpg
+├── PHOTO002 初詣.jpg
+├── PHOTO003 初詣.jpg
+├── PHOTO004 新年会.jpg
+├── PHOTO005 新年会.jpg
+└── PHOTO006 新年会.jpg
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-3">空フォルダの自動削除</h3>
+                <ul class="list-disc list-inside ml-4">
+                    <li>サブフォルダ構成を維持する設定の場合、出力フォルダ内の空フォルダが自動的に削除されます</li>
+                    <li>処理結果メッセージに削除された空フォルダ数が表示されます</li>
+                    <li>サブフォルダ構成を維持しない設定の場合、この機能は適用されません</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 便利な機能セクション -->
+        <section id="features" class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">5. 便利な機能</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">キーボードショートカット</h3>
+                <p class="mb-4">リネラックでは以下のキーボードショートカットが利用できます：</p>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="border-b-2 p-3 text-left">ショートカット</th>
+                                <th class="border-b-2 p-3 text-left">機能</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border-b p-3">Ctrl + S</td>
+                                <td class="border-b p-3">設定を保存</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b p-3">Ctrl + N</td>
+                                <td class="border-b p-3">新規登録</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b p-3">F5</td>
+                                <td class="border-b p-3">処理開始</td>
+                            </tr>
+                            <tr>
+                                <td class="border-b p-3">Ctrl + Q</td>
+                                <td class="border-b p-3">終了</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-3">処理のキャンセル</h3>
+                <p class="mb-4">長時間の処理をキャンセルしたい場合：</p>
+                
+                <div class="tip-box p-4 rounded-lg">
+                    <ol class="list-decimal list-inside ml-4">
+                        <li class="mb-2">処理中に「キャンセル」ボタンをクリックするか、ESCキーを押します</li>
+                        <li class="mb-2">処理が安全に停止され、途中までの処理結果が保存されます</li>
+                        <li class="mb-2">キャンセル完了後、キャンセルされた旨のメッセージが表示されます</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- トラブルシューティングセクション -->
+        <section id="troubleshooting" class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">6. トラブルシューティング</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-3">よくある問題と解決方法</h3>
+                
+                <div class="step-card p-4 bg-gray-50 rounded-lg mb-6">
+                    <h4 class="font-medium mb-2">1. 「サブフォルダが存在しません」というエラーが表示される</h4>
+                    <p class="mb-2">解決策：</p>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li>入力フォルダの直下にサブフォルダを作成してください</li>
+                        <li>ファイルは直接入力フォルダに置かず、サブフォルダ内に配置してください</li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">2. 「出力フォルダへの書き込み権限がありません」というエラーが表示される</h4>
+                    <p class="mb-2">解決策：</p>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li>出力フォルダのアクセス権限を確認してください</li>
+                        <li>管理者権限が必要な場所は避けてください</li>
+                        <li>一時的に別のフォルダを選択してみてください</li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">3. プレビューが表示されない</h4>
+                    <p class="mb-2">解決策：</p>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li>「プレビュー更新」ボタンをクリックしてください</li>
+                        <li>入力フォルダとサブフォルダの構成を確認してください</li>
+                        <li>アルファベット、連番、桁数などの設定を確認してください</li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">4. 処理が途中で止まる</h4>
+                    <p class="mb-2">解決策：</p>
+                    <ul class="list-disc list-inside ml-4 mb-4">
+                        <li>ログファイル（rename_tool_YYYYMMDD.log）でエラー内容を確認してください</li>
+                        <li>大量のファイルを処理する場合は時間がかかることがあります</li>
+                        <li>一度に処理するファイル数を減らしてみてください</li>
+                    </ul>
+                    
+                    <h4 class="font-medium mb-2">5. 同名のファイルが既に存在する場合</h4>
+                    <p class="mb-2">対応：</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>既存のファイル名に連番が付加されます（例：<code>初詣_1.jpg</code>）</li>
+                        <li>連番付加は最大999まで可能です</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-3">ログファイル</h3>
+                <div class="tip-box p-4 rounded-lg">
+                    <p class="mb-3">処理中のエラーや詳細な動作履歴は、アプリケーションと同じフォルダ内の<code>rename_tool_YYYYMMDD.log</code>に記録されます。</p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li class="mb-2">ログファイル名の「YYYYMMDD」部分は実行日付に置き換わります</li>
+                        <li class="mb-2">サポートを受ける際は、このログファイルを提供すると問題解決が早くなります</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- よくある質問と回答セクション -->
+        <section id="faq" class="bg-white p-6 rounded-lg shadow mb-8">
+            <h2 class="text-2xl font-bold mb-4 section-title">7. よくある質問と回答</h2>
+            
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">Q: ファイル名からフォルダ名の先頭の数字を除去できますか？</h3>
+                    <p>A: はい。サブフォルダ名の先頭の数字と記号（例：「2024-01-01 初詣」→「初詣」）は自動的に除去されます。</p>
+                </div>
+                
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">Q: 処理後、元のファイルはどうなりますか？</h3>
+                    <p>A: 元のファイルはそのまま保持されます。リネラックはファイルをコピーして処理するため、安心して使用できます。</p>
+                </div>
+                
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">Q: 大量のファイル（1000枚以上）を処理できますか？</h3>
+                    <p>A: はい。リネラックは並列処理を採用しているため、大量のファイルも効率的に処理できます。ただし、PCの性能によっては時間がかかる場合があります。</p>
+                </div>
+                
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">Q: サブフォルダの階層が深い場合も処理できますか？</h3>
+                    <p>A: 現在のバージョンでは、入力フォルダ直下の1階層のサブフォルダのみ対応しています。より深い階層のサブフォルダ内のファイルは処理されません。</p>
+                </div>
+                
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">Q: 連番が1000を超えた場合はどうなりますか？</h3>
+                    <p>A: 連番の桁数設定を適切に設定してください。例えば、連番が1000まで必要な場合は、桁数を4以上に設定することをお勧めします。</p>
+                </div>
+                
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">Q: 設定を複数のPCで共有できますか？</h3>
+                    <p>A: はい。設定情報は <code>data/settings.json</code> ファイルに保存されています。このファイルを別のPCにコピーしてインポートすることで設定を共有できます。エクスポート専用の機能はありませんが、このJSONファイルを直接操作することで設定の共有が可能です。</p>
+                </div>
+                
+                <div class="p-4 bg-blue-50 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">Q: 処理をキャンセルした場合、すでに処理したファイルはどうなりますか？</h3>
+                    <p>A: キャンセル時点までに処理されたファイルはそのまま保持されます。キャンセル後の連番は、最後に処理されたファイルの次の番号から始まります。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- フッター -->
+        <footer class="bg-gray-800 text-white p-6 rounded-lg shadow text-center">
+            <div class="mb-3">
+                <h3 class="text-xl font-bold">リネラック 公式操作ガイド</h3>
+                <p class="text-gray-300">Version 2025</p>
+            </div>
+            <div class="mb-3">
+                <p>画像の著作権: 株式会社ミラソラ</p>
+            </div>
+            <p class="text-sm text-gray-400">このマニュアルは「リネラック」の基本的な使い方を解説したものです。<br>実際の操作では画面の指示に従い、必要に応じて開発者からの最新情報も確認してください。</p>
+        </footer>
+    </div>
+</body>
+</html>
